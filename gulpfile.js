@@ -4,7 +4,8 @@ var browsersync = require('browser-sync'),
     jshint = require('gulp-jshint'),
     plumber = require('gulp-plumber'),
     postcss = require('gulp-postcss'),
-    sass = require('gulp-sass'),
+//    sass = require('gulp-sass'),
+    stylus = require('gulp-stylus'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
     gutil = require('gulp-util'),
@@ -23,7 +24,8 @@ gulp.task('browser-sync', function() {
 
 
 // Sass
-gulp.task('sass', function() {
+//gulp.task('sass', function() {
+gulp.task('stylus', function() {
   return gulp.src('src/css/**/*.*')
     .pipe(plumber({
       errorHandler: function (err) {
@@ -32,7 +34,7 @@ gulp.task('sass', function() {
       }
     }))
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(stylus())
     .pipe(postcss([
       lost()
     ]))
@@ -55,6 +57,6 @@ gulp.task('jshint', function() {
 });
 
 
-gulp.watch('src/**/*.*', ['sass', 'jshint']);
+gulp.watch('src/**/*.*', ['stylus', 'jshint']);
 
-gulp.task('default', ['sass', 'jshint', 'browser-sync']);
+gulp.task('default', ['stylus', 'jshint', 'browser-sync']);
