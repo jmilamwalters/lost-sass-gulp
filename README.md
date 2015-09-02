@@ -1,5 +1,5 @@
-# lost-sass-gulp
-Lost using Sass and Gulp
+# lost-stylus-gulp
+Lost using Stylus and Gulp
 
 ### Installation
 - `npm i`
