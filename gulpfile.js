@@ -23,10 +23,11 @@ gulp.task('browser-sync', function() {
 });
 
 
-// Sass
+// Stylus
 //gulp.task('sass', function() {
+//  return gulp.src('src/css/**/*.*')
 gulp.task('stylus', function() {
-  return gulp.src('src/css/**/*.*')
+  return gulp.src('src/css/**/*.styl')
     .pipe(plumber({
       errorHandler: function (err) {
         gutil.beep();

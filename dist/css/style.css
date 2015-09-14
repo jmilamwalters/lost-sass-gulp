@@ -1,0 +1,38 @@
+@import 'reset.css';
+body *:not(input):not(textarea):not(select){
+  background-color: rgba(0, 0, 255, 0.1);
+}
+section {
+  *zoom: 1;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+section:before{
+  content: '';
+  display: table;
+}
+section:after{
+  content: '';
+  display: table;
+  clear: both;
+}
+section div {
+  width: calc(99.99% * 1/3 - (30px - 30px * 1/3));
+}
+section div:nth-child(n){
+  float: left;
+  margin-right: 30px;
+  clear: none;
+}
+section div:last-child{
+  margin-right: 0;
+}
+section div:nth-child(3n){
+  margin-right: 0;
+}
+section div:nth-child(3n + 1){
+  clear: left;
+}
+
+/*# sourceMappingURL=style.css.map */
